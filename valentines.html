@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="mainContainer">
+      <img
+        id="displayImg"
+        class="main-image"
+        src="img/1.jpg"
+        alt="Valentines"
+      />
+
+      <h1 id="questionText">Will you be my Valentine? 💖</h1>
+
+      <div class="buttons">
+        <button id="yesBtn" onclick="handleYes()">Yes</button>
+        <button id="noBtn" onclick="handleNo()">No</button>
+      </div>
+    </div>
+
+    <div id="videoOverlay" class="video-overlay">
+      <div class="video-content">
+        <video id="successVideo" width="100%" height="auto">
+          <source src="img/excited.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <h1 class="video-text">Ums ums ums ums ❤️✨</h1>
+        <button class="close-btn" onclick="closeVideo()">Close</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

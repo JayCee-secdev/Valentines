@@ -1,0 +1,119 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ffeef2;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  overflow: hidden; /* Prevents scrollbars if the Yes button gets huge */
+}
+
+/* Updated container to handle growing content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 80vh; /* Keeps things centered */
+}
+
+/* Ensure the image doesn't get squished */
+.main-image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Updated Yes Button: Use padding/font-size instead of scale */
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+  padding: 15px 30px; /* Initial size */
+  font-size: 1.2rem; /* Initial size */
+  transition: all 0.3s ease; /* Smooth growing effect */
+}
+
+h1 {
+  color: #d63384;
+  min-height: 1.5em;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#noBtn {
+  background-color: #adb5bd;
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(var(--scale, 1));
+  }
+  50% {
+    transform: scale(calc(var(--scale, 1) * 1.05));
+  }
+  100% {
+    transform: scale(var(--scale, 1));
+  }
+}
+
+#yesBtn {
+  animation: pulse 1.5s infinite;
+}
+
+/* Hidden by default */
+.video-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background to pop the video */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video-content {
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.video-text {
+  color: white;
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.close-btn {
+  margin-top: 20px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
